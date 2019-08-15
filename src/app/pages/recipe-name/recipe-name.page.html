@@ -1,25 +1,14 @@
-<app-header titulo = "nombre de la receta">  </app-header> 
+<app-header titulo = "Receta {{id}}">  </app-header> 
 
 <ion-content>
-    <ion-list>
-        <ion-list-header>
-          INGREDIENTES:
-        </ion-list-header>
-        <ion-item>
-            <ion-icon slot="start" name="arrow-dropright"></ion-icon>
-          <ion-label color="primary">Chocolate Amargo</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-icon slot="start" name="arrow-dropright"></ion-icon>
-            <ion-label color="primary">Leche</ion-label>
-          </ion-item>
-          <ion-item>
-              <ion-icon slot="start" name="arrow-dropright"></ion-icon>
-              <ion-label color="primary">Manteca</ion-label>
-            </ion-item>
+  
+    <ion-list-header>
+        INGREDIENTES:
+      </ion-list-header>
+    <ion-list *ngFor="let ingrediente of ingredientes;">
             <ion-item>
                 <ion-icon slot="start" name="arrow-dropright"></ion-icon>
-                <ion-label color="primary">Almendras</ion-label>
+                <ion-label color="primary">{{ingrediente.nombre}}</ion-label>
               </ion-item>
         </ion-list>
         <br>
@@ -32,15 +21,14 @@
                 </ion-card-header>
                  
                   <ion-card-subtitle>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, atque. Quaerat nemo accusamus, dignissimos similique veritatis maxime quasi rerum sapiente odio perspiciatis provident animi necessitatibus ipsam, eum ratione! Qui, rem?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non libero facilis veritatis error, maiores placeat suscipit velit rerum voluptate quidem nobis atque magnam qui quod odit sunt eveniet ipsum autem?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit, eius iste fuga repellendus inventore! Provident nemo expedita deleniti ullam. Perspiciatis blanditiis amet ex harum consequuntur assumenda laudantium! Illo, mollitia?</ion-card-subtitle>
+                      {{procedimiento}}
+                  </ion-card-subtitle>
                 
                 
               </ion-card>
               <br>
               <br>
-              <ion-button  color="primary" routerLink="/new-recipe">Nueva Receta</ion-button>
+              <ion-button  color="primary" (click)="nueva()">Nueva Receta</ion-button>
 
           
 </ion-content>

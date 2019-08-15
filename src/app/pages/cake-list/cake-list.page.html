@@ -6,14 +6,14 @@
 
     <ion-row>
       <ion-col size="6" size-lg="3" size-md="4" size-sm="6" 
-              *ngFor="let c of [1,1,1,1,1,1,1,1,1,1,1,1];">
+              *ngFor="let pastel of pasteles">
 
-        <ion-card>
-          <ion-img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2016/05/pasteldechocolate.jpg" routerLink="/cake-name"></ion-img>
+        <ion-card (click)="detalle(pastel.id)">
+          <ion-img src="http://erkapi.site/APIpastel/public{{pastel.image}}" ></ion-img>
 
           <ion-card-header >
            
-            <ion-card-subtitle >Pastel de Cholate Amargo</ion-card-subtitle>
+            <ion-card-subtitle >{{pastel.nombre}}</ion-card-subtitle>
           </ion-card-header>
           
         </ion-card>
