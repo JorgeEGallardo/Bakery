@@ -1,5 +1,7 @@
 {
   "name": "PantheonBakery",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

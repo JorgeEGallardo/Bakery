@@ -1,0 +1,24 @@
+ion-content {
+    --background:#fcf4b6;
+}
+ion-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #7f22e9;
+    background:#edb3bf;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    font-size: larger;
+    padding-left: .5rem;
+}
+ion-item {
+   --background: #fcf4b6;
+}
+ion-textarea {
+    height: 15rem;
+    padding: .5rem .5rem;
+    background: #edb3bf;
+}
+ion-input {
+    background: #edb3bf
+}
