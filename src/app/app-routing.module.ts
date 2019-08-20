@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'recipe-name', loadChildren: './pages/recipe-name/recipe-name.module#RecipeNamePageModule' },
   { path: 'new-recipe', loadChildren: './pages/new-recipe/new-recipe.module#NewRecipePageModule' },  { path: 'new-cake', loadChildren: './pages/new-cake/new-cake.module#NewCakePageModule' },
   { path: 'noti', loadChildren: './pages/noti/noti.module#NotiPageModule' },
+  { path: 'geolocal', loadChildren: './pages/geolocal/geolocal.module#GeolocalPageModule' },
 
 
 ];

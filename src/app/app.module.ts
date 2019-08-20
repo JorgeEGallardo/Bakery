@@ -12,6 +12,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { IonicStorageModule, Storage } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     OneSignal,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

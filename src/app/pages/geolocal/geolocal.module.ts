@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NotiPage } from './noti.page';
+import { GeolocalPage } from './geolocal.page';
 import { ComponentsModule } from '../../components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: NotiPage
+    component: GeolocalPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NotiPage]
+  declarations: [GeolocalPage]
 })
-export class NotiPageModule {}
+export class GeolocalPageModule {}
