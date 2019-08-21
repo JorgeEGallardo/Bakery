@@ -1,10 +1,17 @@
-<app-header  *ngIf="pastel" titulo = "{{pastel.nombre}}|{{pastel.sabor}}">  </app-header> 
+<app-header  *ngIf="pastel" titulo = "{{pastel.nombre}}|{{pastel.sabor}}">  
+
+</app-header> 
 
 <ion-content>
 
+ 
   <ion-grid fixed>
 
     <ion-row>
+      <ion-col size="12">
+        <ion-button style="float:right" (click)="recargar()" color="success"class="ion-minus-circled btn-danger">  <ion-icon name="refresh"></ion-icon></ion-button>
+        <ion-button style="float:right" (click)="cambiar()" color="success"class="ion-minus-circled btn-danger">  <ion-icon name="sync"></ion-icon></ion-button>
+    </ion-col>      
       <ion-col size="12" >
 
         <ion-card *ngIf="pastel">
@@ -16,10 +23,6 @@
           </ion-card-header>
           
         </ion-card>
-<br>
-       
-         
-     <br>
      <ion-list-header>
       Recetas Existentes:
     </ion-list-header>
@@ -28,12 +31,14 @@
             
               <ion-item>
                 <ion-label color="primary" (click)="detalle(receta.id)">Receta {{i+1}}</ion-label>
+                <ion-button color="danger" (click)="delete(receta.id)" class="ion-minus-circled btn-danger">x</ion-button>
+
               </ion-item>
               </ion-list>
     </div>
               <br>
               <br>
-              <ion-button expand="block" routerLink="/new-recipe">Agregar Receta</ion-button>
+              <ion-button expand="block"  (click)="nueva()">Agregar Receta</ion-button>
             
       </ion-col>
     </ion-row>

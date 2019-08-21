@@ -9,11 +9,15 @@
               *ngFor="let pastel of pasteles">
 
         <ion-card (click)="detalle(pastel.id)">
-          <ion-img src="http://erkapi.site/APIpastel/public{{pastel.image}}" ></ion-img>
+          <ion-button style="float:right;height: 1%;width: 15%;" color="danger" (click)="delete(pastel.id)" class="ion-minus-circled btn-danger">x</ion-button>
+       
+          <ion-img src="http://erkapi.site/APIpastel/public{{pastel.image}}" >
+             </ion-img>
 
           <ion-card-header >
            
             <ion-card-subtitle >{{pastel.nombre}}</ion-card-subtitle>
+        
           </ion-card-header>
           
         </ion-card>
@@ -21,8 +25,7 @@
 
       </ion-col>
     </ion-row>
-
-
+    <ion-button expand="block"  (click)="nueva()">Agregar nuevo pastel</ion-button>
 
   </ion-grid>
 </ion-content>

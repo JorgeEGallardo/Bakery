@@ -20,6 +20,7 @@ export interface RespuestaPasteles  {
     updated_at: string;
     id_grupo: string;
     id_procedimiento: string;
+    id_g_ing:string;
   }
   export interface GruposIngredientes{
     Grupos:GrupoIngredientes;
@@ -40,6 +41,9 @@ export interface RespuestaPasteles  {
       created_at: string;
       updated_at: string;
       nombre: string;
+  }
+  export interface Procedimientos{
+    Ingredientes:Procedimiento[];
   }
   export interface Procedimiento{
     id: number;

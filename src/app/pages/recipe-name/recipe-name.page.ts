@@ -23,7 +23,7 @@ ingredientes:Ingrediente[]=[];
       console.log(resp);
       this.receta = resp;
       this.getProcedimiento(this.receta.id_procedimiento);
-      this.getGrupo(id);
+      this.getGrupo(this.receta.id_g_ing);
       })
 }
 getProcedimiento(id){
@@ -41,8 +41,7 @@ getGrupo(id) {
         if (grupo.id_grupo == id) {
           this.getIngrediente(grupo.id_ingrediente);
         }
-      }
-     ;
+      };
     });
 }
 
@@ -55,8 +54,11 @@ getIngrediente(id){
 
 nueva(){
   let id = this.receta.id_grupo;
-  console.log(id);
   this.router.navigate(['/new-recipe/' + id]);
+}
+actualizar(){
+  let id = this.receta.id;
+  this.router.navigate(['/up-recipe/' + id]);
 }
 }
 

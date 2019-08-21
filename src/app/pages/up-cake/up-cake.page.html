@@ -1,0 +1,22 @@
+<app-header titulo = "Nuevo pastel">  </app-header> 
+
+<ion-content>
+<ion-header>Cambiar pastel</ion-header>
+<ion-list *ngIf="pastel"> 
+  <ion-item>
+    <ion-label position="floating">Nombre: {{pastel.nombre}}</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Sabor: {{pastel.sabor}}</ion-label>
+    <ion-input [(ngModel)]="sabor"></ion-input>
+  </ion-item>
+
+  </ion-list>
+
+<br>
+<ion-item  *ngIf="pastel">
+    <ion-textarea [(ngModel)]="descripcion"  placeholder="{{pastel.descripcion}}" ></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" (click)="insert()" name="checkmark-circle" >Cambiar</ion-button>
+</ion-content>

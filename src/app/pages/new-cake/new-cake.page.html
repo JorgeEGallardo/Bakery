@@ -1,0 +1,22 @@
+<app-header titulo = "Nuevo pastel">  </app-header> 
+
+<ion-content>
+<ion-header>Crear un nuevo pastel</ion-header>
+<ion-list> 
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Sabor</ion-label>
+    <ion-input [(ngModel)]="sabor"></ion-input>
+  </ion-item>
+
+  </ion-list>
+
+<br>
+<ion-item>
+    <ion-textarea [(ngModel)]="descripcion"  placeholder="Descripcion" ></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" (click)="insert()" name="checkmark-circle" >Crear</ion-button>
+</ion-content>

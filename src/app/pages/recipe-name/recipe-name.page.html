@@ -13,12 +13,11 @@
         </ion-list>
         <br>
         <br>
-       
-            <ion-card>
+           <ion-card>
+               
                 <ion-card-header>
-
                   INSTRUCCIONES:
-                </ion-card-header>
+                   </ion-card-header>
                  
                   <ion-card-subtitle>
                       {{procedimiento}}
@@ -28,7 +27,8 @@
               </ion-card>
               <br>
               <br>
-              <ion-button  color="primary" (click)="nueva()">Nueva Receta</ion-button>
+              <ion-button  color="primary" expand="block" (click)="actualizar()">Cambiar receta</ion-button>
+              <ion-button  color="primary" expand="block" (click)="nueva()">Nueva Receta</ion-button>
 
           
 </ion-content>

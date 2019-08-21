@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'cake-name/:id', loadChildren: './pages/cake-name/cake-name.module#CakeNamePageModule' },
   { path: 'recipe-name/:id', loadChildren: './pages/recipe-name/recipe-name.module#RecipeNamePageModule' },
   { path: 'new-recipe/:id', loadChildren: './pages/new-recipe/new-recipe.module#NewRecipePageModule' },
+  { path: 'new-cake', loadChildren: './pages/new-cake/new-cake.module#NewCakePageModule' },
+  { path: 'up-cake/:id', loadChildren: './pages/up-cake/up-cake.module#UpCakePageModule' },
+  { path: 'up-recipe/:id', loadChildren: './pages/up-recipe/up-recipe.module#UpRecipePageModule' },
 
 ];
 

@@ -12,23 +12,44 @@ import { Pastel, GrupoReceta, Receta, Ingrediente } from 'src/app/interfaces/int
 export class CakeNamePage implements OnInit {
   pastel: Pastel;
   recetas: Receta[] = [];
+  grupo: string;
   constructor(private route: ActivatedRoute, private pastelesService: PastelesService, public router: Router) {
   }
 
   ngOnInit() {
+    this.pastel = null;
+    this.recetas = [];
+    this.grupo = "";
     let id = this.route.snapshot.paramMap.get('id');
     this.pastelesService.getPastel(id)
       .subscribe(resp => {
         console.log(resp);
         this.pastel = resp;
         this.getRecetas(this.pastel.id);
+        this.grupo = this.pastel.id + "";
       })
   };
 
   detalle(id) {
     this.router.navigate(['/recipe-name/' + id]);
   }
-
+  cambiar() {
+    this.router.navigate(['/up-cake/' +this.pastel.id]);
+  }
+  nueva() {
+    console.log("xd" + this.grupo);
+    this.router.navigate(['/new-recipe/' + this.grupo]);
+  }
+  delete(id) {
+    this.pastelesService.deleteReceta(id)
+      .subscribe(resp => {
+        console.log(resp);
+      });
+    this.ngOnInit();
+  }
+  recargar() {
+    this.ngOnInit();
+  }
   getRecetas(id) {
     this.pastelesService.getRecetas()
       .subscribe(resp => {

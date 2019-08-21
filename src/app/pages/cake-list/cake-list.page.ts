@@ -14,6 +14,7 @@ pasteles:Pastel[] = [];
 
   //Recibir lista de pasteles
   ngOnInit() {
+    this.pasteles=[];
   this.pastelesService.getPasteles()
   .subscribe(resp=>{
     let x = [];
@@ -22,9 +23,17 @@ pasteles:Pastel[] = [];
     this.pasteles.push(pastel);
     }  });
   }
-
+nueva(){
+  this.router.navigate(['/new-cake']);
+}
   detalle(id){
     this.router.navigate(['/cake-name/'+id]);
   }
-
+  delete(id) {
+    this.pastelesService.deletePastel(id)
+      .subscribe(resp => {
+        console.log(resp);
+      });
+    this.ngOnInit();
+  }
 }

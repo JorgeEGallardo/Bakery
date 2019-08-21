@@ -1,0 +1,23 @@
+<app-header titulo = "Cambiar Receta">  </app-header> 
+
+<ion-content>
+<ion-header>INGREDIENTES</ion-header>
+<ion-list> 
+  <ion-item>
+      <ion-item>
+          <ion-label>Ingredientes</ion-label>
+          <ion-select *ngIf="ingredientes"   [(ngModel)]="selected_value" interface="popover" >
+            <ion-select-option *ngFor="let ingrediente of ingredientes" value="{{ingrediente.id}}">{{ingrediente.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button (click)="showselected()" name="checkmark-circle" >Agregar</ion-button>
+  </ion-item>
+</ion-list>
+
+<ion-header>INSTRUCCIONES</ion-header>
+<br>
+<ion-item>
+    <ion-textarea *ngIf="procedimiento" [(ngModel)]="instrucciones"  placeholder="{{procedimiento.procedimiento}}" ></ion-textarea>
+  </ion-item>
+  <ion-button (click)="insert()" name="checkmark-circle" >Insertar</ion-button>
+</ion-content>
