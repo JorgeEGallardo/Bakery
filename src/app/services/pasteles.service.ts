@@ -10,35 +10,35 @@ export class PastelesService {
   constructor( private http:HttpClient) { }
 
   getPasteles(){
-    return this.http.get<RespuestaPasteles>('http://erkapi.site/APIpastel/public/api/pasteles');
+    return this.http.get<RespuestaPasteles>('http://apiav.site/APIpastel/public/api/pasteles');
   }
   getPastel(id){
-    return this.http.get<Pastel>('http://erkapi.site/APIpastel/public/api/pastel/'+id);
+    return this.http.get<Pastel>('http://apiav.site/APIpastel/public/api/pastel/'+id);
   }
   getRecetas(){
-    return this.http.get<GrupoReceta>('http://erkapi.site/APIpastel/public/api/recetas');
+    return this.http.get<GrupoReceta>('http://apiav.site/APIpastel/public/api/recetas');
   }
   getReceta(id){
-    return this.http.get<Receta>('http://erkapi.site/APIpastel/public/api/receta/'+id);  
+    return this.http.get<Receta>('http://apiav.site/APIpastel/public/api/receta/'+id);  
   }
   getGrupos(){
-    return this.http.get<GruposIngredientes>('http://erkapi.site/APIpastel/public/api/in_grupos');
+    return this.http.get<GruposIngredientes>('http://apiav.site/APIpastel/public/api/in_grupos');
   }
   getGrupo(id){
-    return this.http.get<GrupoIngredientes>('http://erkapi.site/APIpastel/public/api/in_grupo/'+id);  
+    return this.http.get<GrupoIngredientes>('http://apiav.site/APIpastel/public/api/in_grupo/'+id);  
   }
   getIngrediente(id){
-    return this.http.get<Ingrediente>('http://erkapi.site/APIpastel/public/api/ingrediente/'+id);  
+    return this.http.get<Ingrediente>('http://apiav.site/APIpastel/public/api/ingrediente/'+id);  
   }
   
   getIngredientes(){
-    return this.http.get<Ingredientes>('http://erkapi.site/APIpastel/public/api/ingredientes');  
+    return this.http.get<Ingredientes>('http://apiav.site/APIpastel/public/api/ingredientes');  
   }
   getProcedimiento(id){
-    return this.http.get<Procedimiento>('http://erkapi.site/APIpastel/public/api/procedimiento/'+id);
+    return this.http.get<Procedimiento>('http://apiav.site/APIpastel/public/api/procedimiento/'+id);
   }
   getProcedimientos(){
-    return this.http.get<Procedimientos>('http://erkapi.site/APIpastel/public/api/procedimientos');
+    return this.http.get<Procedimientos>('http://apiav.site/APIpastel/public/api/procedimientos');
   }
 
 
@@ -51,14 +51,14 @@ export class PastelesService {
       "id_receta":1
     }
     console.log(postData);
-    return this.http.post('http://erkapi.site/APIpastel/public/api/pastel',postData);
+    return this.http.post('http://apiav.site/APIpastel/public/api/pastel',postData);
 
   }
   insertProcedimiento(txt){
     let postData= {
       "procedimiento":txt
     }
-    return this.http.post('http://erkapi.site/APIpastel/public/api/procedimiento',postData);
+    return this.http.post('http://apiav.site/APIpastel/public/api/procedimiento',postData);
   }
   insertGrupo(txt2, txt){
     let postData= {
@@ -66,7 +66,7 @@ export class PastelesService {
       "id_grupo":parseInt(txt2)
     }
     console.log(postData);
-    return this.http.post('http://erkapi.site/APIpastel/public/api/in_grupo',postData);
+    return this.http.post('http://apiav.site/APIpastel/public/api/in_grupo',postData);
   }
   insertReceta(idProcedimiento, idGrupo,idIngredientes){
     let postData= {
@@ -75,14 +75,14 @@ export class PastelesService {
       "id_g_ing":parseInt(idIngredientes)
     }
     console.log(postData);
-    return this.http.post('http://erkapi.site/APIpastel/public/api/receta',postData);
+    return this.http.post('http://apiav.site/APIpastel/public/api/receta',postData);
   }
 //Delete this
 deleteReceta(id){
-  return this.http.delete('http://erkapi.site/APIpastel/public/api/recetadestroy/'+id);
+  return this.http.delete('http://apiav.site/APIpastel/public/api/recetadestroy/'+id);
 }
 deletePastel(id){
-  return this.http.delete('http://erkapi.site/APIpastel/public/api/pasteldes/'+id);
+  return this.http.delete('http://apiav.site/APIpastel/public/api/pasteldes/'+id);
 }
 
 //updates
@@ -94,14 +94,14 @@ updateReceta(id,idProcedimiento, idGrupo,idIngredientes){
     "id_g_ing":parseInt(idIngredientes)
   }
   console.log(postData);
-  return this.http.put('http://erkapi.site/APIpastel/public/api/recetaupdate/'+id,postData);
+  return this.http.put('http://apiav.site/APIpastel/public/api/recetaupdate/'+id,postData);
 }
 
 updateProcedimiento(id,txt){
   let postData= {
     "procedimiento":txt
   }
-  return this.http.put('http://erkapi.site/APIpastel/public/api/procedimientoupdate/'+id,postData);
+  return this.http.put('http://apiav.site/APIpastel/public/api/procedimientoupdate/'+id,postData);
 }
 
 updatePastel(id,sabor,nombre,descripcion){
@@ -112,7 +112,7 @@ updatePastel(id,sabor,nombre,descripcion){
     "id_receta":1
   }
   console.log(postData);
-  return this.http.put('http://erkapi.site/APIpastel/public/api/pastelup/'+id,postData);
+  return this.http.put('http://apiav.site/APIpastel/public/api/pastelup/'+id,postData);
 
 }
 }
