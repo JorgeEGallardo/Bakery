@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'new-cake', loadChildren: './pages/new-cake/new-cake.module#NewCakePageModule' },
   { path: 'up-cake/:id', loadChildren: './pages/up-cake/up-cake.module#UpCakePageModule' },
   { path: 'up-recipe/:id', loadChildren: './pages/up-recipe/up-recipe.module#UpRecipePageModule' },
+  { path: 'noti', loadChildren: './pages/noti/noti.module#NotiPageModule' },
+  { path: 'geolocal', loadChildren: './pages/geolocal/geolocal.module#GeolocalPageModule' },
 
 ];
 

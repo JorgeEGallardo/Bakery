@@ -10,13 +10,18 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { IonicStorageModule, Storage } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,ComponentsModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule,ComponentsModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(),HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
+    OneSignal,
+    Geolocation,
     HTTP,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

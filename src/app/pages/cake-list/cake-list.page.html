@@ -1,7 +1,22 @@
 <app-header titulo = "lista de pasteles">  </app-header> 
 
 <ion-content>
-
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list>
+      <ion-fab-button color="light" routerLink="/new-cake">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" routerLink="/geolocal">
+        <ion-icon name="map"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" routerLink="/noti">
+        <ion-icon name="notifications"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
   <ion-grid fixed>
 
     <ion-row>
